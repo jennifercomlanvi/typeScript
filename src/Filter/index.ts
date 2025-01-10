@@ -7,10 +7,19 @@ interface User {
 }
 
 function readJsonFile<T>(filePath: string): T[] {
-    const data = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(data) as T[];
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(data) as T[];
+    } catch (error) {
+        console.error(`Erreur lors de la lecture du fichier JSON : ${error}`);
+        return [];
+    }
 }
 function filterObjects<T>(users: T[],criteria:Partial<T>):T[] {
+    if (Object.keys(criteria).length === 0) {
+        console.log("Filter : Aucun critère fourni.");
+        return users;
+    }
     let queryLog = Object.entries(criteria)
         .map(([key, value]) => `"${key}" = "${value}"`)
         .join(" AND ");
