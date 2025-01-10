@@ -1,0 +1,3 @@
+describe("filterObjects", () => {
+    const mockUsers: [] = [];
+})

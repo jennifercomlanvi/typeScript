@@ -1,0 +1,37 @@
+[
+    {
+        "name": "John Doe",
+        "age": 30,
+        "email": "john.doe@gmail.com"
+    },
+    {
+        "name": "Jane Smith",
+        "age": 28,
+        "email": "jane.smith@gmail.com"
+    },
+    {
+        "name": "Bob Johnson",
+        "age": 35,
+        "email": "bob.johnson@gmail.com"
+    },
+    {
+        "name": "Alice Johnson",
+        "age": 32,
+        "email": "alice.johnson@gmail.com"
+    },
+    {
+        "name": "Tom Brown",
+        "age": 25,
+        "email": "tom.brown@gmail.com"
+    },
+    {
+        "name": "Sarah Davis",
+        "age": 33,
+        "email": "sarah.davis@gmail.com"
+    },
+    {
+        "name": "Michael Wilson",
+        "age": 27,
+        "email": "michael.wilson@gmail.com"
+    }
+]
