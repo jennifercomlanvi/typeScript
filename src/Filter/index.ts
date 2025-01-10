@@ -10,12 +10,15 @@ function readJsonFile<T>(filePath: string): T[] {
     const data = fs.readFileSync(filePath, 'utf8');
     return JSON.parse(data) as T[];
 }
-function filterObjects<T>(users: T[],critaria:Partial<T>):T[] {
-    let queryLog = Object.entries(critaria).map(([key, value]) => {console.log(`${key} = ${value}`)
-    }).join(" AND ");
-    console.log(`Filter : WHERE: ${queryLog}`);
+function filterObjects<T>(users: T[],criteria:Partial<T>):T[] {
+    let queryLog = Object.entries(criteria)
+        .map(([key, value]) => `"${key}" = "${value}"`)
+        .join(" AND ");
+    
+    // Log de la requête WHERE
+    console.log(`Filter : WHERE ${queryLog}`);
     return users.filter(item => {
-        return Object.entries(critaria).every(([key,value]) => {
+        return Object.entries(criteria).every(([key,value]) => {
             return item[key as keyof T] === value;
         });
     })
